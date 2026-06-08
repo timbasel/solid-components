@@ -1,0 +1,6 @@
+{
+  "name": "solid-components",
+  "description": "A collection of reusable, efficient and styleable UI components using SolidJS",
+  "author": "Tim Basel <tim@basel-berlin.de>",
+  "private": true
+}

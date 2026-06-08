@@ -1,0 +1,27 @@
+{
+  "name": "@solid-components/docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.16.1",
+    "@solidjs/start": "https://pkg.pr.new/solidjs/solid-start/@solidjs/start@2152",
+    "@solidjs/vite-plugin-nitro-2": "https://pkg.pr.new/solidjs/solid-start/@solidjs/vite-plugin-nitro-2@2152",
+    "solid-js": "^1.9.13",
+    "vite": "^7.3.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/node": "^25.9.2",
+    "tailwindcss": "^4.3.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.3.0"
+}
