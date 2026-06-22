@@ -1,0 +1,8 @@
+{
+  "printWidth": 100,
+  "sortTailwindcss": {
+    "stylesheet": "./common/src/style.css",
+    "functions": ["twMerge"],
+    "preserveWhitespace": true
+  }
+}
