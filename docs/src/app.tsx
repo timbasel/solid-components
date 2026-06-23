@@ -1,21 +1,30 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { Suspense } from "solid-js";
-import Nav from "~/components/Nav";
-import "./app.css";
+import { ParentComponent, Suspense } from "solid-js";
+import { MDXProvider } from "solid-mdx";
+import { Header, Sidebar, MDXComponents } from "./components";
+import "./style.css";
 
-export default function App() {
+const App: ParentComponent = (props) => {
   return (
-    <Router
-      base={import.meta.env.BASE_URL}
-      root={props => (
-        <>
-          <Nav />
-          <Suspense>{props.children}</Suspense>
-        </>
-      )}
-    >
-      <FileRoutes />
-    </Router>
+    <div class="flex h-screen w-screen flex-col bg-neutral-200 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
+      <Header />
+      <div class="flex min-h-0 grow">
+        <Sidebar />
+        <div class="h-full w-full overflow-scroll">
+          <main class="mx-auto max-w-6xl p-4">
+            <MDXProvider components={MDXComponents}>
+              <Suspense>{props.children}</Suspense>
+            </MDXProvider>
+          </main>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default () => (
+  <Router base={import.meta.env.BASE_URL} root={App}>
+    <FileRoutes />
+  </Router>
+);

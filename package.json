@@ -10,13 +10,13 @@
     "ui"
   ],
   "author": "Tim Basel <tim@basel-berlin.de>",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "solid": "./dist/index.jsx",
@@ -29,7 +29,9 @@
   },
   "scripts": {
     "dev": "cd docs && pnpm dev",
-    "build": "tsdown"
+    "build": "tsdown",
+    "lint": "oxlint",
+    "fmt": "oxfmt"
   },
   "dependencies": {
     "tailwind-merge": "^3.6.0"

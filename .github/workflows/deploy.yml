@@ -30,7 +30,6 @@ jobs:
         with:
           path: docs/.output/public
 
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
