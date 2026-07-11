@@ -33,7 +33,7 @@ const createPreviewNode = (node: CodeNode): Node => {
       ? node.value
       : `${lines.slice(0, jsxStart).join("\n")}\nreturn (\n${lines.slice(jsxStart).join("\n")}\n);`;
 
-  const value = `<Preview>{(() => {\n${body}\n})()}</Preview>`;
+  const value = `<live>{(() => {\n${body}\n})()}</live>`;
   const estree = parser.parse(value, { ecmaVersion: "latest", sourceType: "module" });
 
   return {

@@ -2,7 +2,7 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { ParentComponent, Suspense } from "solid-js";
 import { MDXProvider } from "solid-mdx";
-import { Header, Sidebar, MDXComponents } from "./components";
+import { Header, MDXComponents, Sidebar } from "./components";
 import "./style.css";
 
 const App: ParentComponent = (props) => {
@@ -12,7 +12,7 @@ const App: ParentComponent = (props) => {
       <div class="flex min-h-0 grow">
         <Sidebar />
         <div class="h-full w-full overflow-scroll">
-          <main class="mx-auto max-w-6xl p-4">
+          <main class="mx-auto max-w-6xl p-4 pb-20">
             <MDXProvider components={MDXComponents}>
               <Suspense>{props.children}</Suspense>
             </MDXProvider>

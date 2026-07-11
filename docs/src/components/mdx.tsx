@@ -1,4 +1,4 @@
-import { ComponentProps } from "solid-js";
+import { ComponentProps, createSignal, onMount, Show } from "solid-js";
 import { twMerge } from "tailwind-merge";
 
 export const MDXComponents = {
@@ -37,5 +37,21 @@ export const MDXComponents = {
         />
       );
     }
+  },
+  live: (props: ComponentProps<"div">) => {
+    const [mounted, setMounted] = createSignal(false);
+    onMount(() => setMounted(true));
+    return (
+      <div
+        {...props}
+        class={twMerge(
+          "flex w-full items-center justify-center border border-neutral-400 bg-neutral-100 p-10 dark:bg-neutral-800",
+        )}
+      >
+        <div class="w-full max-w-md">
+          <Show when={mounted()}>{props.children}</Show>
+        </div>
+      </div>
+    );
   },
 } as const;

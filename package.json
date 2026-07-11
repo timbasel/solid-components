@@ -19,9 +19,13 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "solid": "./dist/index.jsx",
+      "solid": "./dist/solid/index.jsx",
       "import": {
         "types": "./dist/index.d.ts",
+        "browser": "./dist/index.js",
+        "worker": "./dist/server/index.js",
+        "deno": "./dist/server/index.js",
+        "node": "./dist/server/index.js",
         "default": "./dist/index.js"
       }
     },

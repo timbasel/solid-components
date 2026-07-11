@@ -1,0 +1,90 @@
+---
+topic: Components
+name: Input
+---
+
+import { createSignal } from "solid-js";
+import { Input } from "@timbasel/solid-components";
+
+# Input
+
+A text field with a floating label that animates out of the way as soon as the
+field is focused or filled, and an animated underline that highlights the active
+state. It forwards every native `<input>` attribute, so it behaves like a
+regular input wherever you need it to.
+
+## Import
+
+```ts
+import { Input } from "solid-components";
+```
+
+## Usage
+
+```tsx live
+const [value, setValue] = createSignal("")
+
+<Input label="Input" value={value()} onInput={(e) => setValue(e.currentTarget.value)} />
+```
+
+## Examples
+
+### Placeholder
+
+Providing a `placeholder` keeps the label floated up at all times so the
+placeholder text stays visible.
+
+```tsx live
+const [value, setValue] = createSignal("")
+
+<Input
+  label="Email"
+  type="email"
+  placeholder="you@example.com"
+  value={value()}
+  onInput={(e) => setValue(e.currentTarget.value)}
+/>
+```
+
+### Disabled
+
+Native attributes such as `disabled` are forwarded straight to the underlying
+input, which also dims the text.
+
+```tsx live
+<Input label="Disabled" value="Can't touch this" disabled />
+```
+
+### Trailing adornment
+
+Anything passed as `children` is rendered to the right of the input — useful for
+icons, unit suffixes, or action buttons like a password reveal toggle.
+
+```tsx live
+const [value, setValue] = createSignal("")
+const [show, setShow] = createSignal(false)
+
+<Input
+  label="Password"
+  type={show() ? "text" : "password"}
+  value={value()}
+  onInput={(e) => setValue(e.currentTarget.value)}
+>
+  <button type="button" onClick={() => setShow((s) => !s)}>
+    {show() ? "Hide" : "Show"}
+  </button>
+</Input>
+```
+
+### Custom styling
+
+Use `class` to style the container and `inputClass`, `labelClass` and `underlineClass` to style the individual components itself.
+
+```tsx live
+<Input 
+  label="Search" 
+  class="border-blue-500 text-blue-500 dark:border-blue-300 dark:text-blue-300"
+  labelClass="text-orange-500!"
+  underlineClass="bg-orange-500!"
+/>
+```

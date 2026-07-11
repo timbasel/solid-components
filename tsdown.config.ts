@@ -13,8 +13,17 @@ export default defineConfig([
   },
   {
     entry,
+    platform: "node",
+    dts: false,
+    outDir: "dist/server",
+    outExtensions: () => ({ js: ".js" }),
+    plugins: [solid({ solid: { generate: "ssr", hydratable: true } })],
+  },
+  {
+    entry,
     platform: "browser",
     dts: false,
+    outDir: "dist/solid",
     inputOptions: { transform: { jsx: "preserve" } },
     outExtensions: () => ({ js: ".jsx" }),
   },
