@@ -8,7 +8,7 @@ export default defineConfig([
     entry,
     platform: "browser",
     dts: true,
-    copy: ["./src/style.css"],
+    copy: ["./src/theme.css"],
     plugins: [solid({ solid: { generate: "dom", hydratable: true } })],
   },
   {

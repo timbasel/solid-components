@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@timbasel/solid-components/style.css";
+@import "@timbasel/solid-components/theme.css";
 
 @font-face {
   font-family: "Open Sans";
@@ -11,20 +11,6 @@
 
 html {
   font-family: "Open Sans", sans-serif;
-}
-
-@theme {
-  --color-blue-50: #d6e9ff;
-  --color-blue-100: #a1bdde;
-  --color-blue-200: #6b91bd;
-  --color-blue-300: #36659c;
-  --color-blue-400: #1b4f8c;
-  --color-blue-500: #00387b;
-  --color-blue-600: #002e66;
-  --color-blue-700: #002552;
-  --color-blue-800: #001c3e;
-  --color-blue-900: #001432;
-  --color-blue-950: #000814;
 }
 
 @utility debug {

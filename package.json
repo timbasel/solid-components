@@ -22,14 +22,10 @@
       "solid": "./dist/solid/index.jsx",
       "import": {
         "types": "./dist/index.d.ts",
-        "browser": "./dist/index.js",
-        "worker": "./dist/server/index.js",
-        "deno": "./dist/server/index.js",
-        "node": "./dist/server/index.js",
         "default": "./dist/index.js"
       }
     },
-    "./style.css": "./dist/style.css"
+    "./theme.css": "./dist/theme.css"
   },
   "scripts": {
     "dev": "cd docs && pnpm dev",
@@ -38,6 +34,7 @@
     "fmt": "oxfmt"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
