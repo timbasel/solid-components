@@ -1,0 +1,70 @@
+---
+topic: Components
+name: Button
+---
+
+import { createSignal } from "solid-js";
+import { Button } from "@timbasel/solid-components";
+
+# Button
+
+A button with a set of predefined color themes and a subtle press animation. It
+forwards every native `<button>` attribute, so it behaves like a regular button
+wherever you need it to.
+
+## Import
+
+```ts
+import { Button } from "solid-components";
+```
+
+## Usage
+
+```tsx live
+<Button>Click me</Button>
+```
+
+## Examples
+
+### Themes
+
+Use the `theme` prop to pick one of the predefined color themes. It defaults to
+`primary`.
+
+```tsx live
+<div class="flex flex-wrap gap-4">
+  <Button theme="primary">Primary</Button>
+  <Button theme="white">White</Button>
+  <Button theme="inverted">Inverted</Button>
+  <Button theme="transparent">Transparent</Button>
+</div>
+```
+
+### Disabled
+
+Setting the native `disabled` attribute overrides the selected theme with a
+muted disabled style and removes the pointer cursor.
+
+```tsx live
+<Button disabled>Disabled</Button>
+```
+
+### With children
+
+Children are laid out in a centered flex row with a gap, so combining icons or
+other elements with text just works.
+
+```tsx live
+<Button>
+  <span>★</span>
+  Starred
+</Button>
+```
+
+### Custom styling
+
+Use `class` to extend or override the default styles.
+
+```tsx live
+<Button class="rounded-full bg-green-500">Rounded</Button>
+```

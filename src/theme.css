@@ -1,23 +1,26 @@
 @source ".";
 
 @theme {
-  --color-background: var(--color-neutral-200);
-  --color-text: var(--color-neutral-900);
-  --color-text-disabled: var(--color-neutral-500);
+  --color-theme-white: var(--color-white);
+  --color-theme-background: var(--color-neutral-200);
 
-  --color-border: var(--color-neutral-300);
+  --color-theme-text: var(--color-neutral-900);
+  --color-theme-text-disabled: var(--color-neutral-500);
 
-  --color-primary: #00387b;
+  --color-theme-border: var(--color-neutral-300);
+
+  --color-theme-primary: #00387b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--color-neutral-800);
-    --color-text: var(--color-neutral-200);
-    --color-text-disabled: var(--color-neutral-500);
+    --color-theme-white: var(--color-black);
+    --color-theme-background: var(--color-neutral-800);
+    --color-theme-text: var(--color-neutral-200);
+    --color-theme-text-disabled: var(--color-neutral-500);
 
-    --color-border: var(--color-neutral-600);
+    --color-theme-border: var(--color-neutral-600);
 
-    --color-primary: #045ac2;
+    --color-theme-primary: #045ac2;
   }
 }

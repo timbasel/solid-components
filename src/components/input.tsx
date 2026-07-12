@@ -1,5 +1,5 @@
 import { Show, splitProps, type Component, type ComponentProps } from "solid-js";
-import { tw } from "~/utils";
+import { tw } from "../utils";
 
 export type InputProps = {
   label?: string;
@@ -14,7 +14,7 @@ export const Input: Component<InputProps> = (props) => {
 
   return (
     <div
-      class={tw("relative flex h-min w-full items-baseline border-b border-border", props.class)}
+      class={tw("relative flex h-min w-full items-baseline border-b border-theme-border", props.class)}
     >
       <input
         type="text"
@@ -22,7 +22,7 @@ export const Input: Component<InputProps> = (props) => {
         class={tw(
           "peer block w-full bg-transparent outline-hidden",
           props.label ? "pt-5 pb-0" : "",
-          props.disabled ? "text-text-disabled" : "",
+          props.disabled ? "text-theme-text-disabled" : "",
           props.inputClass,
         )}
         {...inputProps}
@@ -35,7 +35,7 @@ export const Input: Component<InputProps> = (props) => {
         <label
           for={props.label}
           class={tw(
-            "pointer-events-none absolute top-5 z-10 origin-left truncate text-clip transition duration-300 select-none peer-placeholder-shown:-translate-y-5 peer-placeholder-shown:scale-75 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-primary",
+            "pointer-events-none absolute top-5 z-10 origin-left truncate text-clip transition duration-300 select-none peer-placeholder-shown:-translate-y-5 peer-placeholder-shown:scale-75 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-theme-primary",
             isEmpty() ? "translate-y-0 scale-100" : "-translate-y-5 scale-75",
           )}
         >
@@ -43,7 +43,7 @@ export const Input: Component<InputProps> = (props) => {
         </label>
       </Show>
       {/* Animated Underline (as seperate div because pseudo-element leads to focus area issues on webkit */}
-      <div class="absolute -bottom-px h-0.5 w-full scale-x-0 bg-primary transition duration-300 peer-focus:scale-x-100" />
+      <div class="absolute -bottom-px h-0.5 w-full scale-x-0 bg-theme-primary transition duration-300 peer-focus:scale-x-100" />
     </div>
   );
 };

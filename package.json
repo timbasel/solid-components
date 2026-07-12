@@ -11,7 +11,8 @@
   ],
   "author": "Tim Basel <tim@basel-berlin.de>",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "type": "module",
   "main": "./dist/index.js",
@@ -19,13 +20,17 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "development": "./src/index.ts",
       "solid": "./dist/solid/index.jsx",
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
     },
-    "./theme.css": "./dist/theme.css"
+    "./theme.css": {
+      "development": "./src/theme.css",
+      "default": "./dist/theme.css"
+    }
   },
   "scripts": {
     "dev": "cd docs && pnpm dev",
